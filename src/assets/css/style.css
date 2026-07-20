@@ -2,8 +2,8 @@
     width: 80%;
 }
 .online-dot{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     display: inline-block;
     background-color: #d3c612;
     animation: dotOnline 1.5s ease infinite forwards alternate;
