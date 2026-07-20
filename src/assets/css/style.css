@@ -1,0 +1,18 @@
+.container-scondary{
+    width: 80%;
+}
+.online-dot{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #d3c612;
+    animation: dotOnline 1.5s ease infinite forwards alternate;
+}
+@keyframes dotOnline {
+    0%{
+        background-color: #008000
+    }
+    100%{
+        background-color: #fff000;
+    }
+}
