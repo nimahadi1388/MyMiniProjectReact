@@ -4,8 +4,8 @@ import Sidebar from "./assets/components/Sidebar";
 import { StudentsContext } from "./assets/context/StudentsContext";
 const App = () => {
   const [students, setStudents] = useState([
-    { id: 1, fistname: "Mamad", lastname: "Ahmadian", isOnline: true },
-    { id: 2, fistname: "Mahmoud", lastname: "Amini", isOnline: false },
+    { id: 1, firstname: "محمد", lastname: "احمدیان", isOnline: true, score: 0},
+    { id: 2, firstname: "محمود", lastname: "امینی", isOnline: false, score: 0},
   ]);
   return (
     <div className="container-scondary mx-auto ">

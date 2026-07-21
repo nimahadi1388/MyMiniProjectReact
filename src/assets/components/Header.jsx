@@ -21,7 +21,8 @@ const Header = () => {
           نام استاد: <span className="text-warning">نیما هادیزاده</span>
         </p>
       </div>
-      <div className="online-dot rounded-circle"></div>
+      <p className="mt-3">{new Date().toLocaleDateString()}</p>
+      <div className="dot online rounded-circle"></div>
     </div>
   );
 };
