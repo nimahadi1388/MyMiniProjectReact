@@ -24,3 +24,14 @@ body{
     background-color: #008000;
   }
 }
+.error{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+.box-hover{
+  transition: all .3s ease;
+  &:hover{
+    box-shadow: -6px 4px 9px -2px #fff;
+  }
+}

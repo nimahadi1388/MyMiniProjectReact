@@ -6,6 +6,7 @@ const App = () => {
   const [students, setStudents] = useState([
     { id: 1, firstname: "محمد", lastname: "احمدیان", isOnline: true, score: 0},
     { id: 2, firstname: "محمود", lastname: "امینی", isOnline: false, score: 0},
+    { id: 3, firstname: "اکبر", lastname: "حسن زاده", isOnline: true, score: 0},
   ]);
   return (
     <div className="container-scondary mx-auto ">
