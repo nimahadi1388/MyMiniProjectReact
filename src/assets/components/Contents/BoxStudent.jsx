@@ -45,7 +45,7 @@ const BoxStudent = ({
     setStudent(deleteStudent);
   };
   return (
-    <div className=" box-hover bg-black me-3 p-3 text-center rounded-4 box-student">
+    <div className=" box-hover bg-black me-3 p-3 text-center rounded-4 box-student w-25">
       <img width={150} src="../../../public/image/studentBox.png" alt="" />
       <div>
         <h3 className="d-inline-block">{`${firstname} ${lastname}`}</h3>

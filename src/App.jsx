@@ -1,18 +1,15 @@
 import { useState } from "react";
 import Header from "./assets/components/Header";
-import Sidebar from "./assets/components/Sidebar";
+import Content from "./assets/components/Contents/Content";
 import { StudentsContext } from "./assets/context/StudentsContext";
+import { studentsList } from "./assets/data/student";
 const App = () => {
-  const [students, setStudents] = useState([
-    { id: 1, firstname: "محمد", lastname: "احمدیان", isOnline: true, score: 0},
-    { id: 2, firstname: "محمود", lastname: "امینی", isOnline: false, score: 0},
-    { id: 3, firstname: "اکبر", lastname: "حسن زاده", isOnline: true, score: 0},
-  ]);
+  const [students, setStudents] = useState(studentsList);
   return (
-    <div className="container-scondary mx-auto ">
+    <div className="container">
       <Header />
       <StudentsContext.Provider value={{ students, setStudents }}>
-        <Sidebar />
+        <Content />
       </StudentsContext.Provider>
     </div>
   );

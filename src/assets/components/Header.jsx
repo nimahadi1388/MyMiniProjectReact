@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="d-flex justify-content-left gap-5 mt-4 align-items-center">
+    <div className="d-flex justify-content-center gap-5 mt-4 align-items-center">
       <div>
         <img
           className="d-inline-block"
