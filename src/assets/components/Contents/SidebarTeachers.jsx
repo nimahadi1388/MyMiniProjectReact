@@ -8,75 +8,79 @@ const SidebarTeacher = ({ openTeacherList, setOpenTeacherList }) => {
     setTeacherList(deleteTeacher);
   };
   return (
-    <>
-      <div
-        className={`teacher-boxes mx-auto text-center p-4 bg-black overflow-y-auto top-0 ${openTeacherList ? "start-0" : ""}`}
-      >
-        <img
-          width={80}
-          className={`btnTeacherList ${openTeacherList ? "active" : ""}`}
-          src="../../../../public/image/TeacherListBtn.png"
-          alt=""
-          onClick={() => setOpenTeacherList(!openTeacherList)}
-        />
-        <table>
-          <thead className="d-flex justify-content-center align-items-center position-fixed ">
-            <tr>
-              <th className="p-3">عکس</th>
-              <th className="p-3" scope="col">
-                نام
-              </th>
-              <th className="p-3" scope="col">
-                نام خانوادگی
-              </th>
-              <th className="p-3" scope="col">
-                نام درس
-              </th>
-              <th className="p-4" scope="col">
-                جنسیت
-              </th>
-              <th className="p-1" scope="col">
-                وضعیت
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {teacherList.map((teacher) => (
-              <tr className="box-teachers d-flex justify-content-between align-items-center text-center border-top p-3">
-                {teacher.Gender ? (
-                  <img
-                    width={50}
-                    src="../../../../public/image/TeacherM.png"
-                    alt=""
-                  />
-                ) : (
-                  <img width={50} src="../../../../public/image/TeacherF.png" />
-                )}
-                <td className="px-3">{teacher.firstName}</td>
-                <td className="px-3">{teacher.lastName}</td>
-                <td className="px-3">{teacher.WhatGrade}</td>
-                {teacher.Gender ? (
-                  <td className="px-3">اقا</td>
-                ) : (
-                  <td className="px-3">خانم</td>
-                )}
-                {teacher.IsOnline ? (
-                  <td className="dot online rounded-circle mx-4"></td>
-                ) : (
-                  <td className="dot offline rounded-circle mx-4"></td>
-                )}
-                <td
-                  onClick={() => handleDeleteTeacher(teacher.id)}
-                  className="btn btn-danger px-3 py-2 me-3"
-                >
-                  اخراج
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
+    <div
+      className={`teacher-boxes mx-auto text-center p-4 bg-black top-0 ${openTeacherList ? "start-0" : ""}`}
+    >
+      <img
+        width={80}
+        className={`btnTeacherList mx-4 ${openTeacherList ? "active" : ""}`}
+        src="../../../../public/image/TeacherListBtn.png"
+        alt=""
+        onClick={() => setOpenTeacherList(!openTeacherList)}
+      />
+      <section>
+        <div className="top-0 position-sticky bg-black border-bottom ">
+          <u><h2 className="pt-3">معلم ها</h2></u>
+          <div className="d-flex align-items-center">
+            <h5 className="px-2 py-2">ردیف</h5>
+            <h5 className="px-2 py-2">عکس</h5>
+            <h5 className="px-2 py-2" scope="col">
+              نام
+            </h5>
+            <h5 className="px-2 py-2" scope="col">
+              نام خانوادگی
+            </h5>
+            <h5 className="px-2 py-2" scope="col">
+              نام درس
+            </h5>
+            <h5 className="px-2 py-2" scope="col">
+              جنسیت
+            </h5>
+            <h5 className="px-2 py-2" scope="col">
+              وضعیت
+            </h5>
+          </div>
+        </div>
+        <div className="scroll-table">
+          {teacherList.map((teacher) => (
+            <div
+              key={teacher.id}
+              className="box-teachers text-center w-100 d-flex justify-content-between align-items-center text-center border-top p-2"
+            >
+              <p className="px-3">{teacher.id}</p>
+              {teacher.Gender ? (
+                <img
+                  width={50}
+                  src="../../../../public/image/TeacherM.png"
+                  alt="" className="mx-3 text-text-center"
+                />
+              ) : (
+                <img width={50} src="../../../../public/image/TeacherF.png" className="mx-3 text-text-center" />
+              )}
+              <p className="mx-3">{teacher.firstName}</p>
+              <p className="mx-3">{teacher.lastName}</p>
+              <p className="mx-3">{teacher.WhatGrade}</p>
+              {teacher.Gender ? (
+                <p className="mx-3">اقا</p>
+              ) : (
+                <p className="mx-3">خانم</p>
+              )}
+              {teacher.IsOnline ? (
+                <p className="dot d-flex online rounded-circle mx-4"></p>
+              ) : (
+                <p className="dot d-flex offline rounded-circle mx-4"></p>
+              )}
+              <button
+                onClick={() => handleDeleteTeacher(teacher.id)}
+                className="btn btn-danger px-3 me-4"
+              >
+                اخراج
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 export default SidebarTeacher;

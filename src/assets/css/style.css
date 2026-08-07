@@ -5,6 +5,9 @@ body {
   margin: 0;
   padding: 0;
 }
+p{
+  margin-bottom: 0 !important;
+}
 .container-scondary {
   width: 80%;
   margin: 0 auto;
@@ -120,8 +123,9 @@ body {
 .teacher-boxes {
   display: grid;
   place-content: center;
-  left: -40rem;
+  left: -44rem;
   position: fixed;
+  height: 100vh;
   .box-teachers {
     &:hover {
       background: #333;
@@ -131,14 +135,15 @@ body {
 .btnTeacherList{
   position: fixed;
   top: 4rem;
-  left: 0rem;
+  left: -1.6rem;
   padding: 4px;
   border-radius: 0 40px 40px 0;
   background: #000;
 }
 .btnTeacherList.active{
-  left: 38rem !important;
+  left: 41rem !important;
 }
-.tabelTeacher{
-  height: 200vh !important;
+.scroll-table{
+  height: 600px !important;
+  overflow-y: auto;
 }
