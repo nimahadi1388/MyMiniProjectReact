@@ -1,3 +1,6 @@
+* {
+  transition: all 0.3s ease;
+}
 body {
   margin: 0;
   padding: 0;
@@ -17,21 +20,15 @@ body {
 .offline {
   background: #ff0000;
 }
-@keyframes dotOnline {
-  0% {
-    background-color: #fff000;
-  }
-  100% {
-    background-color: #008000;
-  }
-}
 .error {
   display: grid;
   place-content: center;
   height: 100vh;
 }
+.content {
+  margin-right: 10%;
+}
 .box-hover {
-  transition: all 0.3s ease;
   &:hover {
     box-shadow: -6px 4px 9px -2px #fff;
   }
@@ -54,4 +51,94 @@ body {
   &:hover::before {
     width: 100%;
   }
+}
+.dropdownCss {
+  animation: dropdown 0.4s ease alternate;
+  width: 6.5%;
+  li {
+    cursor: pointer;
+  }
+}
+.boxes-item .box-item-sidebar {
+  position: relative;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.4s ease;
+    transform: scaleX(0);
+  }
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+.sidebar {
+  right: -15.5rem;
+  width: 16vw;
+  position: fixed;
+  img {
+    width: 40px;
+    top: 40px;
+    left: 15px;
+    cursor: pointer;
+  }
+}
+.btn-open-sidebar {
+  position: absolute !important;
+  top: 6px !important;
+  left: 6px !important;
+}
+.slanted-edge {
+  width: 100px;
+  height: 50px;
+  background: #000;
+  position: absolute;
+  top: 40px;
+  left: -40px;
+}
+/* Animations */
+@keyframes dotOnline {
+  0% {
+    background-color: #fff000;
+  }
+  100% {
+    background-color: #008000;
+  }
+}
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.teacher-boxes {
+  display: grid;
+  place-content: center;
+  left: -40rem;
+  position: fixed;
+  .box-teachers {
+    &:hover {
+      background: #333;
+    }
+  }
+}
+.btnTeacherList{
+  position: fixed;
+  top: 4rem;
+  left: 0rem;
+  padding: 4px;
+  border-radius: 0 40px 40px 0;
+  background: #000;
+}
+.btnTeacherList.active{
+  left: 38rem !important;
+}
+.tabelTeacher{
+  height: 200vh !important;
 }
