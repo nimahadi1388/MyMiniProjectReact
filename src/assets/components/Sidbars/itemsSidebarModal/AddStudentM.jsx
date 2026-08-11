@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ModalToggleContext } from "../../../context/ModalContext";
 import { StudentsContext } from "../../../context/StudentsContext";
 
 const AddStudentM = ({ titleModal }) => {
   const { modalToggle, setModalToggle } = useContext(ModalToggleContext);
   const {students , setStudents } = useContext(StudentsContext)
+  const [inputValue , setInputValue] = useState()
   return (
     <div
       className={`modal-tem-css ${modalToggle == "Modal-1" ? "" : "hidden"}`}
