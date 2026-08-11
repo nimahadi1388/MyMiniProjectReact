@@ -5,23 +5,35 @@ import { studentsList } from "./assets/data/student";
 import Sidebar from "./assets/components/Sidbars/Sidebar";
 import Header from "./assets/components/Header";
 import { SidebarContext } from "./assets/context/SidebarContext";
+import AddStudentM from "./assets/components/Sidbars/itemsSidebarModal/AddStudentM";
+import AddTeacherM from "./assets/components/Sidbars/itemsSidebarModal/AddTeacherM";
+import { ModalToggleContext } from "./assets/context/ModalContext";
 const App = () => {
   const [students, setStudents] = useState(studentsList);
   const [sidebarToggle, setSidebarToggle] = useState(false);
+  const [modalToggle, setModalToggle] = useState(false);
   return (
-    <div>
+    <div className="position-relative overflow-hidden">
       <div className="d-flex flex-row-reverse justify-content-between">
-        <div className={`${sidebarToggle ? "content" : ""}`}>
+        <StudentsContext.Provider value={{ students, setStudents }}>
+          <div className={`${sidebarToggle ? "content" : ""}`}>
+            <SidebarContext.Provider
+              value={{ sidebarToggle, setSidebarToggle }}
+            >
+              <Header />
+            </SidebarContext.Provider>
+            <Content />
+          </div>
           <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
-            <Header/>
+            <ModalToggleContext.Provider
+              value={{ modalToggle, setModalToggle }}
+            >
+              <Sidebar />
+              <AddStudentM titleModal="افزودن دانش اموز" />
+              <AddTeacherM titleModal="افزودن معلم" />
+            </ModalToggleContext.Provider>
           </SidebarContext.Provider>
-          <StudentsContext.Provider value={{ students, setStudents }}>
-            <Content/>
-          </StudentsContext.Provider>
-        </div>
-        <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
-          <Sidebar />
-        </SidebarContext.Provider>
+        </StudentsContext.Provider>
       </div>
     </div>
   );

@@ -63,7 +63,7 @@ const FilterItems = () => {
       </div>
       <div className="d-flex justify-content-center flex-wrap gap-4">
         {filterStudent.map((student) => (
-          <BoxStudent
+          <BoxStudent key={student.id}
             firstname={student.firstname}
             lastname={student.lastname}
             isOnline={student.isOnline}

@@ -1,11 +1,20 @@
 * {
   transition: all 0.3s ease;
 }
+::-webkit-scrollbar {
+  background: #000;
+  width: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 30px;
+}
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
-p{
+p {
   margin-bottom: 0 !important;
 }
 .container-scondary {
@@ -132,7 +141,7 @@ p{
     }
   }
 }
-.btnTeacherList{
+.btnTeacherList {
   position: fixed;
   top: 4rem;
   left: -1.6rem;
@@ -140,10 +149,58 @@ p{
   border-radius: 0 40px 40px 0;
   background: #000;
 }
-.btnTeacherList.active{
+.btnTeacherList.active {
   left: 41rem !important;
 }
-.scroll-table{
+.scroll-table {
   height: 600px !important;
   overflow-y: auto;
+}
+.modal-tem-css {
+  position: fixed;
+  top: 0;
+  background: #00000085 !important;
+  width: 99dvw !important;
+  height: 100dvh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animation-modal {
+  animation: modal-animation-open 0.5s ease alternate;
+}
+.close {
+  animation: modal-animation-close 0.3s ease alternate;
+  opacity: 0;
+  visibility: hidden;
+}
+.hidden{
+  visibility: hidden;
+}
+.image-uploader {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 15px;
+  input[type="file"] {
+    display: none;
+  }
+}
+@keyframes modal-animation-open {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes modal-animation-close {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
 }

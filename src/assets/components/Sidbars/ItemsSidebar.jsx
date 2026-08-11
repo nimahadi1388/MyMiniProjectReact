@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { ModalToggleContext } from "../../context/ModalContext";
+
 const ItemSidebar = () => {
+  const { setModalToggle } = useContext(ModalToggleContext);
   return (
     <div className="d-flex flex-column justify-content-between h-100 boxes-item">
       <div className="text-center mx-auto mt-5">
@@ -12,7 +16,13 @@ const ItemSidebar = () => {
       <div className="mx-auto">
         <div>
           <div className="z-0 p-2 box-item-sidebar d-flex flex-row-reverse align-items-center mt-3">
-            <button className="w-100 mt-1 text-end bg-transparent border-0 text-white me-2">
+            <button
+              onClick={() => {
+                setModalToggle("Modal-1");
+                document.body.style.overflow = "hidden";
+              }}
+              className="w-100 mt-1 text-end bg-transparent border-0 text-white me-2"
+            >
               افزودن دانش اموز
             </button>
             <img
@@ -22,7 +32,13 @@ const ItemSidebar = () => {
             />
           </div>
           <div className="z-0 p-2 box-item-sidebar d-flex flex-row-reverse align-items-center mt-3">
-            <button className="w-100 text-end bg-transparent border-0 text-white me-2">
+            <button
+              onClick={() => {
+                setModalToggle("Modal-2");
+                document.body.style.overflow = "hidden";
+              }}
+              className="w-100 text-end bg-transparent border-0 text-white me-2"
+            >
               افزودن معلم
             </button>
             <img
