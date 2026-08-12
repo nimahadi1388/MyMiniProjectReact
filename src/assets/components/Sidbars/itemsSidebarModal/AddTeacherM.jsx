@@ -1,8 +1,48 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ModalToggleContext } from "../../../context/ModalContext";
+import { TeacherContext } from "../../../context/TeacherContext";
 
 const AddTeacherM = ({ titleModal }) => {
-  const { modalToggle, setModalToggle } = useContext(ModalToggleContext);
+  const { modalToggle, setModalToggle, setMessage } =
+    useContext(ModalToggleContext);
+  const { teacherList, setTeacherList } = useContext(TeacherContext);
+  const [inputValueN, setInputValueN] = useState();
+  const [inputValueL, setInputValueL] = useState();
+  const [inputValueC, setInputValueC] = useState();
+  const handleChangeValueN = (e) => {
+    setInputValueN(e.target.value);
+  };
+  const handleChangeValueL = (e) => {
+    setInputValueL(e.target.value);
+  };
+  const handleChangeValueC = (e) => {
+    setInputValueC(e.target.value);
+  };
+  const handleAddTeacher = () => {
+    if (inputValueN && inputValueL && inputValueC) {
+      setInputValueC("");
+      setInputValueL("");
+      setInputValueN("");
+      let newTeacher = {
+        id: teacherList.length + 1,
+        firstName: inputValueN,
+        lastName: inputValueL,
+        WhatGrade: inputValueC,
+        IsOnline: false,
+      };
+      setTeacherList([...teacherList, newTeacher]);
+      setMessage("messageSuccessTeacher");
+      setTimeout(() => {
+        setMessage(false);
+      }, 4000);
+    } else {
+      setMessage("messageErr");
+      setTimeout(() => {
+        setMessage(false);
+      }, 4000);
+      return false;
+    }
+  };
   return (
     <div
       className={`modal-tem-css ${modalToggle == "Modal-2" ? "" : "hidden"}`}
@@ -30,7 +70,8 @@ const AddTeacherM = ({ titleModal }) => {
               id="nameStudent"
               className="form-control"
               type="text"
-              placeholder="نام دانش اموز را وارد کنید..."
+              onChange={handleChangeValueN}
+              placeholder="نام معلم را وارد کنید..."
             />
           </div>
           <div className="d-flex gap-2 mt-3 text-nowrap">
@@ -40,8 +81,21 @@ const AddTeacherM = ({ titleModal }) => {
             <input
               id="lNameStudent"
               className="form-control"
+              onChange={handleChangeValueL}
               type="text"
-              placeholder="نام خانوادگی دانش اموز را وارد کنید..."
+              placeholder="نام خانوادگی معلم را وارد کنید..."
+            />
+          </div>
+          <div className="d-flex gap-2 mt-3 text-nowrap">
+            <label className="fs-5" htmlFor="lNameStudent">
+              نام درس:
+            </label>
+            <input
+              id="lNameStudent"
+              className="form-control"
+              onChange={handleChangeValueC}
+              type="text"
+              placeholder="نام درس معلم را وارد کنید..."
             />
           </div>
           {/* <div className="d-flex gap-2 mt-3 text-nowrap text-end d-flex align-items-center">
@@ -66,7 +120,12 @@ const AddTeacherM = ({ titleModal }) => {
              <div></div>
           </div> */}
         </form>
-        <button className="btn btn-success mt-4 w-100 py-3">اضافه کردن</button>
+        <button
+          onClick={handleAddTeacher}
+          className="btn btn-success mt-4 w-100 py-3"
+        >
+          اضافه کردن
+        </button>
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ export const teachers = [
     firstName: "امین",
     lastName: "احمدی فر",
     WhatGrade: "برنامه نویسی",
-    Gender: true,
     IsOnline: true,
   },
   {
@@ -12,7 +11,6 @@ export const teachers = [
     firstName: "مژده",
     lastName: "معینی راد",
     WhatGrade: "مبانی کامپیوتر",
-    Gender: false,
     IsOnline: true,
   },
   {
@@ -28,7 +26,6 @@ export const teachers = [
     firstName: "فاطمه",
     lastName: "حامدی زادگان",
     WhatGrade: "شبکه",
-    Gender: false,
     IsOnline: true,
   },
   {
@@ -36,7 +33,6 @@ export const teachers = [
     firstName: "اکبر",
     lastName: "حامدی زادگان",
     WhatGrade: "برنامه نویسی",
-    Gender: true,
     IsOnline: false,
   },
   {
@@ -44,7 +40,6 @@ export const teachers = [
     firstName: "زهرا",
     lastName: "احمدی فر",
     WhatGrade: "هک و امنیت",
-    Gender: false,
     IsOnline: true,
   },
   {
@@ -52,7 +47,6 @@ export const teachers = [
     firstName: "زهرا",
     lastName: "امینی",
     WhatGrade: "هک و امنیت",
-    Gender: false,
     IsOnline: true,
   },
   {
@@ -60,7 +54,6 @@ export const teachers = [
     firstName: "امین",
     lastName: "امینی",
     WhatGrade: "گرافیک",
-    Gender: true,
     IsOnline: false,
   },
   {
@@ -68,7 +61,6 @@ export const teachers = [
     firstName: "محمد",
     lastName: "معینی راد",
     WhatGrade: "برنامه نویسی",
-    Gender: true,
     IsOnline: true,
   },
   {
@@ -76,7 +68,6 @@ export const teachers = [
     firstName: "احمد",
     lastName: "معینی راد",
     WhatGrade: "سخت افزار",
-    Gender: true,
     IsOnline: false,
   },
   {
@@ -84,7 +75,6 @@ export const teachers = [
     firstName: "اکبر",
     lastName: "معینی راد",
     WhatGrade: "برنامه نویسی",
-    Gender: true,
     IsOnline: false,
   },
 ];

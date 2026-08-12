@@ -20,8 +20,10 @@ const SidebarTeacher = ({ openTeacherList, setOpenTeacherList }) => {
       />
       <section>
         <div className="top-0 position-sticky bg-black border-bottom ">
-          <u><h2 className="pt-3">معلم ها</h2></u>
-          <div className="d-flex align-items-center">
+          <u>
+            <h2 className="pt-3">معلم ها</h2>
+          </u>
+          <div className="d-flex gap-2 align-items-center">
             <h5 className="px-2 py-2">ردیف</h5>
             <h5 className="px-2 py-2">عکس</h5>
             <h5 className="px-2 py-2" scope="col">
@@ -32,9 +34,6 @@ const SidebarTeacher = ({ openTeacherList, setOpenTeacherList }) => {
             </h5>
             <h5 className="px-2 py-2" scope="col">
               نام درس
-            </h5>
-            <h5 className="px-2 py-2" scope="col">
-              جنسیت
             </h5>
             <h5 className="px-2 py-2" scope="col">
               وضعیت
@@ -48,23 +47,16 @@ const SidebarTeacher = ({ openTeacherList, setOpenTeacherList }) => {
               className="box-teachers text-center w-100 d-flex justify-content-between align-items-center text-center border-top p-2"
             >
               <p className="px-3">{teacher.id}</p>
-              {teacher.Gender ? (
-                <img
-                  width={50}
-                  src="../../../../public/image/TeacherM.png"
-                  alt="" className="mx-3 text-text-center"
-                />
-              ) : (
-                <img width={50} src="../../../../public/image/TeacherF.png" className="mx-3 text-text-center" />
-              )}
+              <img
+                width={50}
+                src="../../../../public/image/TeacherM.png"
+                alt=""
+                className="mx-3 text-text-center"
+              />
+
               <p className="mx-3">{teacher.firstName}</p>
               <p className="mx-3">{teacher.lastName}</p>
               <p className="mx-3">{teacher.WhatGrade}</p>
-              {teacher.Gender ? (
-                <p className="mx-3">اقا</p>
-              ) : (
-                <p className="mx-3">خانم</p>
-              )}
               {teacher.IsOnline ? (
                 <p className="dot d-flex online rounded-circle mx-4"></p>
               ) : (
