@@ -44,7 +44,7 @@ const AddTeacherM = ({ titleModal }) => {
               placeholder="نام خانوادگی دانش اموز را وارد کنید..."
             />
           </div>
-          <div className="d-flex gap-2 mt-3 text-nowrap text-end d-flex align-items-center">
+          {/* <div className="d-flex gap-2 mt-3 text-nowrap text-end d-flex align-items-center">
             <label className="fs-5 text-wrap w-25">لطفا عکس را وارد کنید</label>
             <div className=" d-flex justify-content-center align-items-center">
               <label className="text-black" htmlFor="upload-image">
@@ -52,7 +52,7 @@ const AddTeacherM = ({ titleModal }) => {
                   src="../../../../../public/image/addImagebtn.png"
                   width={60}
                   alt=""
-                /> */}
+                />
               </label>
               <input
                 id="upload-image"
@@ -61,10 +61,10 @@ const AddTeacherM = ({ titleModal }) => {
                 className="d-block"
               />
             </div>
-            {/* <p>پیش نمایش عکس:</p>
+             <p>پیش نمایش عکس:</p>
              <img width={60} className="object-fit-cover" src="" alt="" /> 
-             <div></div> */}
-          </div>
+             <div></div>
+          </div> */}
         </form>
         <button className="btn btn-success mt-4 w-100 py-3">اضافه کردن</button>
       </div>

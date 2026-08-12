@@ -174,7 +174,7 @@ p {
   opacity: 0;
   visibility: hidden;
 }
-.hidden{
+.hidden {
   visibility: hidden;
 }
 .image-uploader {
@@ -184,6 +184,18 @@ p {
   border-radius: 15px;
   input[type="file"] {
     display: none;
+  }
+}
+.message {
+  position: fixed;
+  top: 3rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transform: translate(-50%, 0);
+  left: 50%;
+  animation: messageOpen 0.2s ease alternate;
+  img{
+    width: 30px !important;
   }
 }
 @keyframes modal-animation-open {
@@ -202,5 +214,19 @@ p {
   }
   100% {
     scale: 0;
+  }
+}
+@keyframes messageOpen {
+  0% {
+    top: -10rem;
+    opacity: 0;
+    width: 20rem;
+    visibility: hidden;
+  }
+  100% {
+    top: 3rem;
+    opacity: 1;
+    width: 20rem;
+    visibility: visible;
   }
 }
