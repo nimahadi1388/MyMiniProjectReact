@@ -1,4 +1,5 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
+import { NumberStaticits } from "../../context/NumberStaticits";
 
 const BoxStudent = ({
   firstname,
@@ -9,6 +10,7 @@ const BoxStudent = ({
   students,
   id,
 }) => {
+  const { setStudentExp, studentsExp } = useContext(NumberStaticits);
   let handlemMinutScore = (id) => {
     setStudent(
       students.map((student) => {
@@ -41,7 +43,8 @@ const BoxStudent = ({
   };
   let handleDeleteStudent = (id) => {
     let deleteStudent = students.filter((student) => student.id !== id);
-
+    let addExpStudent = studentsExp + 1;
+    setStudentExp(addExpStudent);
     setStudent(deleteStudent);
   };
   return (

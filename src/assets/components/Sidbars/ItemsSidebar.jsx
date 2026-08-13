@@ -48,7 +48,13 @@ const ItemSidebar = () => {
             />
           </div>
           <div className="z-0 p-2 box-item-sidebar d-flex flex-row-reverse align-items-center mt-3">
-            <button className="w-100 mt-1 text-end bg-transparent border-0 text-white me-2">
+            <button
+              onClick={() => {
+                setModalToggle("Modal-3");
+                document.body.style.overflow = "hidden";
+              }}
+              className="w-100 mt-1 text-end bg-transparent border-0 text-white me-2"
+            >
               امار کلاس
             </button>
             <img

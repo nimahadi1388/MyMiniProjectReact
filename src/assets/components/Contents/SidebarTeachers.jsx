@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { TeacherContext } from "../../context/TeacherContext";
+import { NumberStaticits } from "../../context/NumberStaticits";
 
 const SidebarTeacher = ({ openTeacherList, setOpenTeacherList }) => {
+  const { teacherExp, setTeacherExp } = useContext(NumberStaticits);
   const { teacherList, setTeacherList } = useContext(TeacherContext);
   const handleDeleteTeacher = (id) => {
     let deleteTeacher = teacherList.filter((teacher) => teacher.id !== id);
     setTeacherList(deleteTeacher);
+    setTeacherExp(teacherExp + 1);
   };
   return (
     <div
@@ -13,7 +16,7 @@ const SidebarTeacher = ({ openTeacherList, setOpenTeacherList }) => {
     >
       <img
         width={80}
-        className={`btnTeacherList mx-4 ${openTeacherList ? "active" : ""}`}
+        className={`btnTeacherList ${openTeacherList ? "active" : ""}`}
         src="../../../../public/image/TeacherListBtn.png"
         alt=""
         onClick={() => setOpenTeacherList(!openTeacherList)}
