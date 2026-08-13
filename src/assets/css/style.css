@@ -134,6 +134,7 @@ p {
   place-content: center;
   left: -44rem;
   position: fixed;
+  width: 650px;
   height: 100vh;
   .box-teachers {
     &:hover {
