@@ -22,9 +22,6 @@ const App = () => {
   const [studentsExp, setStudentExp] = useState(0);
   const [scoreAvr, setScoreAvr] = useState(0);
   const [teacherExp, setTeacherExp] = useState(0);
-  const [offlineStudent, setOfflineStudent] = useState(0);
-  const [offlineTeacher, setOfflineTeacher] = useState(0);
-  const [numberLesson, setNumberLesson] = useState(0);
   return (
     <div className="position-relative overflow-hidden">
       <div className="d-flex flex-row-reverse justify-content-between">
@@ -36,12 +33,6 @@ const App = () => {
             setScoreAvr,
             teacherExp,
             setTeacherExp,
-            offlineStudent,
-            setOfflineStudent,
-            offlineTeacher,
-            setOfflineTeacher,
-            numberLesson,
-            setNumberLesson,
           }}
         >
           <TeacherContext.Provider value={{ teacherList, setTeacherList }}>
@@ -63,7 +54,7 @@ const App = () => {
                   <Sidebar />
                   <AddStudentM titleModal="افزودن دانش اموز" />
                   <AddTeacherM titleModal="افزودن معلم" />
-                  <Statistics titleModal="امار کلاس"/>
+                  <Statistics titleModal="امار کلاس" />
                   <Message />
                 </ModalToggleContext.Provider>
               </SidebarContext.Provider>

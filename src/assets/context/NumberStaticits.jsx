@@ -7,10 +7,4 @@ export const NumberStaticits = createContext({
   setScoreAvr: () => {},
   teacherExp: [],
   setTeacherExp: () => {},
-  offlineStudent: [],
-  setOfflineStudent: () => {},
-  offlineTeacher: [],
-  setOfflineTeacher: () => {},
-  numberLesson: [],
-  setNumberLesson: () => {},
 });
